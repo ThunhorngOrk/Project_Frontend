@@ -220,3 +220,18 @@ document.querySelector(".btn-secondary").addEventListener("click", function () {
 
     form.reset();
 });
+
+//style typing effect
+let words = "ORDER YOUR FAVOITE FOOD ONLINE";
+let i = 0;
+let forward = true;
+
+setInterval(() => {
+    if (forward) {
+        document.getElementById("typing").textContent = words.slice(0, i++);
+        if (i > words.length) forward = false;
+    } else {
+        document.getElementById("typing").textContent = words.slice(0, i--);
+        if (i < 0) forward = true;
+    }
+}, 170);
