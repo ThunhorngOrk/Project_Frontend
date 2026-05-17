@@ -62,19 +62,20 @@
         </div>
     </nav>
 
+    <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Your Information</h1>
+                    <h1 class="modal-title fs-5 " id="exampleModalLabel">Your Information</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form id="userForm">
 
                         <!-- Name -->
                         <div class="mb-3">
-                            <label for="name" class="col-form-label">Name</label>
+                            <label for="name" class="col-form-label ">Name</label>
                             <input id="name" type="text" class="form-control" placeholder="Enter name" required>
                         </div>
 
@@ -121,6 +122,7 @@
 
                             <!-- State / Province -->
                             <input type="text" class="form-control mb-2" placeholder="State / Province" required>
+
                         </div>
 
                         <!-- Profile Upload -->
@@ -129,23 +131,25 @@
                             <input id="profile" type="file" class="form-control" accept="image/*">
                         </div>
 
+                        <img style="width: 150px; height: 150px; border-radius: 12px;" class="ms-3 mb-3"
+                            src="https://i.pinimg.com/1200x/0e/53/97/0e53973045af09690a585416fba9394c.jpg" alt="">
+
+                        <div class="modal-footer">
+                            <!-- Add Employee -->
+                            <button type="submit" class="btn btn-secondary w-100">
+                                Add Your Information
+                            </button>
+
+                            <!-- Cancel -->
+                            <button type="button" class="btn btn-primary w-100" data-bs-dismiss="modal">
+                                Cancel
+                            </button>
+                        </div>
+
                     </form>
                 </div>
 
-                <img style="width: 150px; height: 150px; border-radius: 12px;" class="ms-3 mb-3"
-                    src="https://i.pinimg.com/1200x/0e/53/97/0e53973045af09690a585416fba9394c.jpg" alt="">
 
-                <div class="modal-footer">
-                    <!-- Add Employee -->
-                    <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">
-                        Add Your Information
-                    </button>
-
-                    <!-- Cancel -->
-                    <button type="button" class="btn btn-primary w-100" data-bs-dismiss="modal">
-                        Cancel
-                    </button>
-                </div>
             </div>
         </div>
     </div>

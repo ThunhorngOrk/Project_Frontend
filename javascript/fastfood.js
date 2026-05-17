@@ -188,3 +188,40 @@ const Checkout = () => {
         });
     }
 }
+
+
+//modal form
+document.querySelector(".btn-secondary").addEventListener("click", function () {
+
+    const form = document.getElementById("userForm");
+
+    //  If form invalid
+    if (!form.checkValidity()) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: "You can't add your information"
+        });
+        return;
+    }
+
+    //  Check gender manually
+    const gender = document.querySelector('input[name="gender"]:checked');
+    if (!gender) {
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: "You can't add your information"
+        });
+        return;
+    }
+
+    //  If success
+    Swal.fire({
+        icon: 'success',
+        title: 'Success!',
+        text: "Information added successfully!"
+    });
+
+    form.reset();
+});

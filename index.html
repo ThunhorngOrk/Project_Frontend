@@ -29,7 +29,7 @@
                 aria-labelledby="offcanvasDarkNavbarLabel">
                 <div class="offcanvas-header">
                     <i class="offcanvas-title fs-5" id="offcanvasDarkNavbarLabel">
-                            FoodExpress
+                        FoodExpress
                     </i>
                     <button type="button" class="btn-close btn-close-black" data-bs-dismiss="offcanvas"
                         aria-label="Close"></button>
@@ -74,7 +74,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form>
+                    <form id="userForm">
 
                         <!-- Name -->
                         <div class="mb-3">
@@ -134,23 +134,25 @@
                             <input id="profile" type="file" class="form-control" accept="image/*">
                         </div>
 
+                        <img style="width: 150px; height: 150px; border-radius: 12px;" class="ms-3 mb-3"
+                            src="https://i.pinimg.com/1200x/0e/53/97/0e53973045af09690a585416fba9394c.jpg" alt="">
+
+                        <div class="modal-footer">
+                            <!-- Add Employee -->
+                            <button type="submit" class="btn btn-secondary w-100">
+                                Add Your Information
+                            </button>
+
+                            <!-- Cancel -->
+                            <button type="button" class="btn btn-primary w-100" data-bs-dismiss="modal">
+                                Cancel
+                            </button>
+                        </div>
+
                     </form>
                 </div>
 
-                <img style="width: 150px; height: 150px; border-radius: 12px;" class="ms-3 mb-3"
-                    src="https://i.pinimg.com/1200x/0e/53/97/0e53973045af09690a585416fba9394c.jpg" alt="">
 
-                <div class="modal-footer">
-                    <!-- Add Employee -->
-                    <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">
-                        Add Your Information
-                    </button>
-
-                    <!-- Cancel -->
-                    <button type="button" class="btn btn-primary w-100" data-bs-dismiss="modal">
-                        Cancel
-                    </button>
-                </div>
             </div>
         </div>
     </div>
@@ -234,7 +236,8 @@
 
         <div class="hero-content text-center text-white">
             <h1 class="fw-bold">ORDER YOUR FAVOITE FOOD ONLINE</h1>
-            <p>Discover delicious meals, fast food, coffee, and milk tea. Easy ordering, quick service, and great taste every time.</p>
+            <p>Discover delicious meals, fast food, coffee, and milk tea. Easy ordering, quick service, and great taste
+                every time.</p>
         </div>
     </div>
 
