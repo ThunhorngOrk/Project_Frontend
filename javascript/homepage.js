@@ -38,7 +38,7 @@ const Display = (prd) => {
 }
 
 // Fetch data
-fetch("https://thunhorngork.github.io/Datakhmerfood/")
+fetch("https://ngunmakara009-cmd.github.io/API-Khmer-food/")
     .then(res => res.json())
     .then(pcdata => {
         product = pcdata
