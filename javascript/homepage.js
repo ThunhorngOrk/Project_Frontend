@@ -128,15 +128,39 @@ const Update = () => {
 
         show = `<div class="card-footer">
 
-                <div class="mb-3">
-    <label for="promoCode" class="col-form-label">Promotion Code</label>
-    <input 
-        id="promoCode" 
-        type="text" 
-        class="form-control" 
-        placeholder="Enter promo code"
-    >
-</div>
+        <div class="mb-3 ">
+        <label class="col-form-label">Select Payment Method</label>
+
+        <div class="form-check">
+            <input class="form-check-input  " type="radio" name="bank" value="ABA" id="aba">
+            <label class="form-check-label" for="aba"><img src="https://i.pinimg.com/1200x/72/ae/d6/72aed6a382d80ba47b86f5690ea8bb1a.jpg" alt="ABA" width="30px" class="me-2 bank-img ">ABA Bank</label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input " type="radio" name="bank" value="ACLEDA" id="acleda">
+            <label class="form-check-label" for="acleda"><img src="https://i.pinimg.com/736x/9b/d9/e5/9bd9e55527b9a81e922697eb7c94b713.jpg" alt="ACLEDA" width="30px" class="me-2 bank-img ">ACLEDA Bank</label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="bank" value="KB PRASAK Bank" id="kbprask">
+            <label class="form-check-label" for="kbprask"><img src="https://i.pinimg.com/1200x/06/e9/4c/06e94cc0a6c032b6ce65a67b32ed4bf7.jpg" alt="KB PRASAK Bank" width="30px" class="me-2 bank-img ">KB PRASAK Bank</label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="bank" value="Vattanac Bank" id="nbc">
+            <label class="form-check-label" for="nbc"><img src="https://scontent.fpnh5-1.fna.fbcdn.net/v/t39.30808-6/432020533_801841341974812_467067171358853087_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeFr6PWiqruezyd3UBxVj1tl9ZqK44-H4Ur1morjj4fhSuIqVHRAOeaOMfgN2kKa_zAcEkAurzpJSlpAySSaych6&_nc_ohc=5nQahe35Mp8Q7kNvwFHWW2L&_nc_oc=Adrim-gCcdOnjshu0_OQ6VJYRLARGBI0zXF2_69pnj5D2rzLmUmiaIIjYAd2yNYcNjM&_nc_zt=23&_nc_ht=scontent.fpnh5-1.fna&_nc_gid=vpNtEkaghio4zBIrcG_N3g&_nc_ss=7b2a8&oh=00_Af5JCm5jssur32ZvsUBtmirdKoEbsDKWlJ_1c_2MZ9qqZQ&oe=6A10719F" alt="Vattanac Bank" width="30px" class="me-2 bank-img ">Vattanac Bank</label>
+        </div>
+
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="bank" value="Cash on Delivery" id="cod">
+            <label class="form-check-label" for="cod"><img src="https://i.pinimg.com/736x/fd/5d/36/fd5d360ff078dc897e88dbed7c95118e.jpg" alt="COD" width="30px" class="me-2 bank-img ">Cash on Delivery</label>
+        </div>
+    </div>
+
+        <div class="mb-3">
+            <label for="promoCode" class="col-form-label">Promotion Code</label>
+            <input id="promoCode" type="text" class="form-control" placeholder="Enter promo code">
+        </div>
                     <div class="d-flex justify-content-between fw-bold">
                         <span>Total Payment:</span>
                         <span>$${totalpayment}</span>
@@ -174,16 +198,36 @@ const Checkout = () => {
             title: "Your cart is empty",
             text: "You can't Payment with empty cart",
         });
-    } else {
-        cardItem = [];
-        Update();
-        Swal.fire({
-            icon: "success",
-            title: "Thank You For Order",
-            dragger: true
-        });
+        return;
     }
-}
+
+    // ✅ Get selected payment method
+    const selectedBank = document.querySelector('input[name="bank"]:checked');
+
+    if (!selectedBank) {
+        Swal.fire({
+            icon: "warning",
+            title: "Select Payment Method",
+            text: "Please choose a bank before payment",
+        });
+        return;
+    }
+
+    let bank = selectedBank.value;
+
+    // ✅ Success (you can replace with real API later)
+    cardItem = [];
+    Update();
+
+    Swal.fire({
+        icon: "success",
+        title: "Thank You For Order",
+        text: "Payment Method: " + bank,
+        dragger: true
+    });
+
+    console.log("Selected Bank:", bank);
+};
 
 // modal form
 document.querySelector(".btn-secondary").addEventListener("click", function () {

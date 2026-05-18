@@ -292,3 +292,26 @@ body{
   margin-top: 15px;
   padding-top: 15px;
 }
+
+.form-check {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    cursor:pointer;
+}
+
+.form-check-input {
+    margin-right: 10px;
+    margin-left: 0 !important;
+    cursor:pointer;
+   
+}
+
+.bank-img {
+    border-radius: 6px;
+    padding: 1px;
+   
+}
