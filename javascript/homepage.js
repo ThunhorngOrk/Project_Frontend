@@ -201,7 +201,7 @@ const Checkout = () => {
         return;
     }
 
-    // ✅ Get selected payment method
+    //  Get selected payment method
     const selectedBank = document.querySelector('input[name="bank"]:checked');
 
     if (!selectedBank) {
@@ -215,7 +215,7 @@ const Checkout = () => {
 
     let bank = selectedBank.value;
 
-    // ✅ Success (you can replace with real API later)
+    //  Success (you can replace with real API later)
     cardItem = [];
     Update();
 
