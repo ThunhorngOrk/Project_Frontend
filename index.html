@@ -58,7 +58,7 @@
                             data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"></i>
                         <span id="cart_count">0</span>
                         <!-- User Profile Button -->
-                        <button  type="button" class="btn text-black ms-3 fs-4 d-flex " data-bs-toggle="modal"
+                        <button type="button" class="btn text-black ms-3 fs-4 d-flex " data-bs-toggle="modal"
                             data-bs-target="#exampleModal"><i class="fa-solid fa-circle-user "></i></button>
                     </form>
 
@@ -128,7 +128,15 @@
                             <!-- State / Province -->
                             <input type="text" class="form-control mb-2" placeholder="State / Province" required>
 
+                            <!-- Share location -->
+                            <div class="input-group">
+                                <button class="btn btn-primary w-100" type="button" onclick="getLocation()">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    Share Location
+                                </button>
+                            </div>
                         </div>
+
 
                         <!-- Profile Upload -->
                         <div class="mb-3">
