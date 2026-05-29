@@ -151,7 +151,7 @@ const Update = () => {
 
         <div class="form-check">
             <input class="form-check-input" type="radio" name="bank" value="Vattanac Bank" id="nbc">
-            <label class="form-check-label" for="nbc"><img src="https://scontent.fpnh5-1.fna.fbcdn.net/v/t39.30808-6/432020533_801841341974812_467067171358853087_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeFr6PWiqruezyd3UBxVj1tl9ZqK44-H4Ur1morjj4fhSuIqVHRAOeaOMfgN2kKa_zAcEkAurzpJSlpAySSaych6&_nc_ohc=5nQahe35Mp8Q7kNvwFHWW2L&_nc_oc=Adrim-gCcdOnjshu0_OQ6VJYRLARGBI0zXF2_69pnj5D2rzLmUmiaIIjYAd2yNYcNjM&_nc_zt=23&_nc_ht=scontent.fpnh5-1.fna&_nc_gid=vpNtEkaghio4zBIrcG_N3g&_nc_ss=7b2a8&oh=00_Af5JCm5jssur32ZvsUBtmirdKoEbsDKWlJ_1c_2MZ9qqZQ&oe=6A10719F" alt="Vattanac Bank" width="30px" class="me-2 bank-img ">Vattanac Bank</label>
+            <label class="form-check-label" for="nbc"><img src="https://worldecomag.com/wp-content/uploads/2021/10/Vattanac-Bank-Logo-1.png" alt="Vattanac Bank" width="30px" class="me-2 bank-img ">Vattanac Bank</label>
         </div>
 
         <div class="form-check">

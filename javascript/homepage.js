@@ -146,6 +146,10 @@ const Update = () => {
             <label class="form-check-label" for="kbprask"><img src="https://i.pinimg.com/1200x/06/e9/4c/06e94cc0a6c032b6ce65a67b32ed4bf7.jpg" alt="KB PRASAK Bank" width="30px" class="me-2 bank-img ">KB PRASAK Bank</label>
         </div>
 
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="bank" value="Vattanac Bank" id="nbc">
+            <label class="form-check-label" for="nbc"><img src="https://worldecomag.com/wp-content/uploads/2021/10/Vattanac-Bank-Logo-1.png" alt="Vattanac Bank" width="30px" class="me-2 bank-img ">Vattanac Bank</label>
+        </div>
         
         <div class="form-check">
             <input class="form-check-input" type="radio" name="bank" value="Cash on Delivery" id="cod">
