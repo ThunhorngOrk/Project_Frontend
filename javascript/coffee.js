@@ -1,10 +1,10 @@
-let product = []
-let cardItem = []
+let product = [];
+let cardItem = [];
 
 // Display product
 const Display = (prd) => {
     if (prd.length > 0) {
-        prd.forEach(item => {
+        prd.forEach((item) => {
             document.getElementById("show-product").innerHTML += `
             <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                 <div class="card h-100 border-0 product-card">
@@ -38,55 +38,55 @@ const Display = (prd) => {
         `;
     }
     Update();
-}
+};
 
 // Fetch data
 fetch("https://ngunmakara009-cmd.github.io/API-coffee/")
-    .then(res => res.json())
-    .then(pcdata => {
-        product = pcdata
-        console.log(product)
-        Display(product)
+    .then((res) => res.json())
+    .then((pcdata) => {
+        product = pcdata;
+        console.log(product);
+        Display(product);
     })
-    .catch(err => console.log(err))
+    .catch((err) => console.log(err));
 
 // Search product
 document.getElementById("search").addEventListener("input", function (e) {
-    let searchValue = e.target.value.toLowerCase()
+    let searchValue = e.target.value.toLowerCase();
     console.log(searchValue);
 
-    let found = product.filter(pro => {
-        return pro.name.toLowerCase().includes(searchValue)
-    })
+    let found = product.filter((pro) => {
+        return pro.name.toLowerCase().includes(searchValue);
+    });
     document.getElementById("show-product").innerHTML = ``;
     if (found.length > 0) {
         Display(found);
         document.getElementById("txt-search").innerHTML = ``;
     } else {
-        document.getElementById("txt-search").innerHTML = `Product is Not Found!`
+        document.getElementById("txt-search").innerHTML = `Product is Not Found!`;
     }
-})
+});
 
 // fc add to cart
 const addToCart = (productId) => {
-    let prd = product.find(pro => pro.id === productId)
-    let itemcart = cardItem.find(i => i.id === productId)
+    let prd = product.find((pro) => pro.id === productId);
+    let itemcart = cardItem.find((i) => i.id === productId);
     if (itemcart) {
         itemcart.quantity += 1;
     } else {
-        cardItem.push({ ...prd, quantity: 1 })
+        cardItem.push({ ...prd, quantity: 1 });
     }
     Swal.fire({
         title: `${prd.name} added to cart!`,
         text: "Please check your cart",
-        icon: "success"
+        icon: "success",
     });
     Update();
-}
+};
 
 const Update = () => {
-    let cartCount = document.getElementById("cart_count")
-    let tocart = document.getElementById("cart-items")
+    let cartCount = document.getElementById("cart_count");
+    let tocart = document.getElementById("cart-items");
 
     let total = cardItem.reduce((sum, item) => sum + item.quantity, 0);
     cartCount.innerHTML = total;
@@ -106,7 +106,7 @@ const Update = () => {
                 </div>`;
         document.getElementById("card-summary").innerHTML = show;
     } else {
-        cardItem.forEach(item => {
+        cardItem.forEach((item) => {
             showitem += `<div class="cart-item">
                     <img src="${item.image}" alt="">
 
@@ -121,12 +121,12 @@ const Update = () => {
 </div>
                     </div>
                     <i class="bi bi-trash remove-btn" onclick="Removecart(${item.id})"></i>
-                </div>`
-            tocart.innerHTML = showitem
-        })
+                </div>`;
+            tocart.innerHTML = showitem;
+        });
         let totalpayment = cardItem.reduce(
             (sum, item) => sum + item.price * item.quantity,
-            0
+            0,
         );
 
         show = `<div class="card-footer">
@@ -174,19 +174,18 @@ const Update = () => {
                         <span>$${totalpayment}</span>
                     </div>
                     <button onclick="Checkout()" class="btn btn-dark w-100 mt-3">Payment</button>
-                </div>`
+                </div>`;
         document.getElementById("card-summary").innerHTML = show;
     }
-
-}
+};
 
 const Removecart = (productId) => {
-    cardItem = cardItem.filter(i => i.id !== productId)
+    cardItem = cardItem.filter((i) => i.id !== productId);
     Update();
-}
+};
 
 const UpdateQTY = (productId, qtycount) => {
-    const qtyData = cardItem.find(i => i.id === productId);
+    const qtyData = cardItem.find((i) => i.id === productId);
 
     if (qtyData) {
         qtyData.quantity += qtycount;
@@ -197,7 +196,7 @@ const UpdateQTY = (productId, qtycount) => {
         }
     }
     Update();
-}
+};
 
 const Checkout = () => {
     if (cardItem.length === 0) {
@@ -231,24 +230,22 @@ const Checkout = () => {
         icon: "success",
         title: "Thank You For Order",
         text: "Payment Method: " + bank,
-        dragger: true
+        dragger: true,
     });
 
     console.log("Selected Bank:", bank);
 };
 
-
 // modal form
 document.querySelector(".btn-secondary").addEventListener("click", function () {
-
     const form = document.getElementById("userForm");
 
     //  If form invalid
     if (!form.checkValidity()) {
         Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: "You can't add your information"
+            icon: "error",
+            title: "Oops...",
+            text: "You can't add your information",
         });
         return;
     }
@@ -257,18 +254,18 @@ document.querySelector(".btn-secondary").addEventListener("click", function () {
     const gender = document.querySelector('input[name="gender"]:checked');
     if (!gender) {
         Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: "You can't add your information"
+            icon: "error",
+            title: "Oops...",
+            text: "You can't add your information",
         });
         return;
     }
 
     //  If success
     Swal.fire({
-        icon: 'success',
-        title: 'Success!',
-        text: "Information added successfully!"
+        icon: "success",
+        title: "Success!",
+        text: "Information added successfully!",
     });
 
     form.reset();
