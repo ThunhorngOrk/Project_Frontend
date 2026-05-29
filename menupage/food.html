@@ -52,10 +52,11 @@
                         <i style="cursor: pointer" class="bi bi-bag-fill text-black fs-4" data-bs-toggle="offcanvas"
                             data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"></i>
                         <span id="cart_count">0</span>
+                        <!-- User Profile Button -->
+                        <button  type="button" class="btn text-black ms-3 fs-4 " data-bs-toggle="modal"
+                            data-bs-target="#exampleModal"><i class="fa-solid fa-circle-user "></i></button>
                     </form>
-                    <!-- User Profile Button -->
-                    <button class="btn text-black ms-3 fs-4 " data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                            class="fa-solid fa-circle-user "></i></button>
+
                 </div>
 
             </div>
@@ -156,7 +157,8 @@
     <!-- cart-ocanvas -->
 
     <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
-        id="offcanvasScrolling"><div class="offcanvas-header">
+        id="offcanvasScrolling">
+        <div class="offcanvas-header">
             <h5 class="offcanvas-title">Your Food</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
         </div>
