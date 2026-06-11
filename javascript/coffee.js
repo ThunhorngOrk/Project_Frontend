@@ -41,7 +41,7 @@ const Display = (prd) => {
 };
 
 // Fetch data
-fetch("https://ngunmakara009-cmd.github.io/API-coffee/")
+fetch("https://ngunmakara.github.io/API-coffee/")
     .then((res) => res.json())
     .then((pcdata) => {
         product = pcdata;

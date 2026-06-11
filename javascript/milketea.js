@@ -41,7 +41,7 @@ const Display = (prd) => {
 };
 
 // Fetch data
-fetch("https://ngunmakara009-cmd.github.io/API-milktea/")
+fetch("https://ngunmakara.github.io/API-milktea/")
     .then((res) => res.json())
     .then((pcdata) => {
         product = pcdata;
